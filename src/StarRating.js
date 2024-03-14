@@ -28,11 +28,11 @@ export default function StarRating({ maxRating = 3 }) {
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
-            key={1}
+            key={i}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
             onRate={() => handleRating(i + 1)}
             onHoverIn={() => setTempRating(i + 1)}
-            onHoverOut={setTempRating(0)}
+            onHoverOut={() => setTempRating(0)}
           />
         ))}
       </div>
@@ -41,14 +41,14 @@ export default function StarRating({ maxRating = 3 }) {
   );
 }
 
-const starStyle = {
-  width: "40px",
-  height: "40px",
-  display: "block",
-  cursor: "pointer",
-};
-
 function Star({ onRate, full, onHoverIn, onHoverOut }) {
+  const starStyle = {
+    width: "40px",
+    height: "40px",
+    display: "block",
+    cursor: "pointer",
+  };
+
   return (
     <span
       role="button"
@@ -84,10 +84,3 @@ function Star({ onRate, full, onHoverIn, onHoverOut }) {
     </span>
   );
 }
-
-/*
-EMPTY STAR
-
-
-
-*/
