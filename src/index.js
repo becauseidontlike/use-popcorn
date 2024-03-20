@@ -5,15 +5,15 @@ import App from "./App";
 
 import StarRating from "./StarRating";
 
-function Test() {
-  const [movieRating, setMovieRating] = useState();
-  return (
-    <div>
-      <StarRating color="violet" maxRating={10} onSetRating={setMovieRating} />
-      <p>This movie was rated {movieRating} stars.</p>
-    </div>
-  );
-}
+// function Test() {
+//   const [movieRating, setMovieRating] = useState();
+//   return (
+//     <div>
+//       <StarRating color="violet" maxRating={10} onSetRating={setMovieRating} />
+//       <p>This movie was rated {movieRating} stars.</p>
+//     </div>
+//   );
+// }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +35,6 @@ root.render(
       messages={["terrible", "bad", "okay", "good", "top"]}
       defaultRating={3}
     /> */}
-    <Test />
+    {/* <Test /> */}
   </React.StrictMode>
 );
