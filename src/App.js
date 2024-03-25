@@ -333,6 +333,12 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     function () {
       if (!title) return;
       document.title = `Movie: ${title}`;
+
+      return function () {
+        document.title = "useCinema";
+        //js closure - title will still be avaiable
+        //console.log(`clean effect for ${title}`);
+      };
     },
     [title]
   );
