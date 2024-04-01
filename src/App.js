@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-const mykey = `4426741c`;
+const mykey = ``;
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -241,7 +241,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const [userRating, setUserRating] = useState("");
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
-  console.log(isWatched);
+  //console.log(isWatched);
   const watchedUserRating = watched.find(
     (movie) => movie.imdbID === selectedId
   )?.userRating;
@@ -262,6 +262,18 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   // // /*eslint-disable*/
   // // if (imdbRating > 7) [isTop, setIsTop] = useState(false);
   // if (imdbRating > 7) return <p>test</p>;
+
+  // const [isTop, setIsTop] = useState(imdbRating > 7);
+  // console.log(isTop);
+  // useEffect(
+  //   function () {
+  //     setIsTop(imdbRating > 7);
+  //   },
+  //   [imdbRating]
+  // );
+
+  const isTop = imdbRating > 8;
+  console.log(isTop);
 
   function handleAdd() {
     const newWatchedMovie = {
